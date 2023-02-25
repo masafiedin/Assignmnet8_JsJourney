@@ -1,37 +1,134 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
+    border-radius: 15px;
 }
 
-
-#mainContainer{
+#mainContainer {
     display: flex;
     flex-direction: column;
 }
 
-.header{
+.header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     background-color: black;
     border-bottom: solid 5px #F7DF1E;
+    border-radius: 0px;
 }
-.logoText{
+
+.logoText {
     display: flex;
     flex-direction: row nowrap;
     margin: 2%;
 }
 
-.logoText img{
+.logoText img {
     margin-right: 10px;
 }
 
-.headerTitle{
+.headerTitle {
     color: white;
-
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+}
 
 
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.userForm {
+
+    border-left: solid 25px #F7DF1E;
+    width: 60%;
+    margin: 5%;
+    background-color: black;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.userFormUpper {
+    background-color: #FCFDFD;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 85%;
+    margin: 3%;
+    margin-left: 40px;
+    margin-right: 0px;
+}
+
+.layout {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: flex-end; */
+    width: 27%;
+}
+
+
+.subForm {
+    max-width: 70%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    padding: 3%;
+}
+
+.intro {
+    width: 90%;
+}
+
+.formBody2 {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 90%;
+}
+
+.userFormLower {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.lowerContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-left: 5%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.lowerContainer button {
+    padding: 3%;
+    width: 25%;
+    font-weight: bolder;
+}
+
+#continue {
+    background-color: #F7DF1E;
+    color: #FCFDFD;
+}
+
+.formData {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin: 2%;
+    padding: 2%;
+}
+
+.formData label {
+    width: 30%;
+    margin: 2px;
+}
+
+.formData input {
+    width: 65%;
+    border-radius: 5px;
 }
