@@ -26,7 +26,7 @@
                             <h3>Welcome to MA's JavaScript Hub!Please sign in to access the portal and mini games!</h3>
                         </div>
                         <!-- <div class="formBody1"> -->
-                            <form class="formBody2" action="">
+                            <form id="form1" name="myForm" class="formBody2" action="" onsubmit="return validateForm()">
                                 <div class="formData">
                                     <label for="name">Name</label>
                                     <input type="text" name="name" id="name">
@@ -56,8 +56,8 @@
                 </div>
                 <div class="userFormLower">
                     <div class="lowerContainer">
-                        <button>Sign in</button>
-                    <button id="continue">Continue</button>
+                        <input class="button" type="submit" value="Sign in" onclick="" form="form1">
+                        <input id="continue" class="button" type="submit" value="Sign up" onclick="" form="form1">
                     </div>
 
                 </div>
