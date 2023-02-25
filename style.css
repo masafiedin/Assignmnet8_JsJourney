@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#mainContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    background-color: black;
+    border-bottom: solid 5px #F7DF1E;
+}
+.logoText{
+    display: flex;
+    flex-direction: row nowrap;
+    margin: 2%;
+}
+
+.logoText img{
+    margin-right: 10px;
+}
+
+.headerTitle{
+    color: white;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+
+}
