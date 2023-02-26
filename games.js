@@ -98,7 +98,7 @@ function reverseString() {
       document.getElementById("reverseStrinOutput").innerHTML =
         "This is the input, with numbers reversed :D ".concat(input.join(""));
     } else {
-      var inputReverse = input.split("").reverse().join("");
+      var inputReverse = input.reverse().join("");
       document.getElementById("reverseStrinOutput").innerHTML =
         "You have entered a string with no numbers, might as well be reversed: ".concat(
           inputReverse
