@@ -20,13 +20,12 @@
         </div>
         <div class="body">
             <div class="userForm">
-                <div class="userFormUpper">
+                <div class="userFormUpper" id="changeForm">
                     <div class="subForm">
                         <div class="intro">
-                            <h3>Welcome to MA's JavaScript Hub!Please sign in to access the portal and mini games!</h3>
+                            <h3>Welcome to MA's JavaScript Hub!Please sign up to access the portal and mini games!</h3>
                         </div>
-                        <!-- <div class="formBody1"> -->
-                            <form id="form1" name="myForm" class="formBody2" action="" onsubmit="return validateForm()">
+                            <form id="form1" name="myForm" class="formBody2" action="" onsubmit="return submitForm()">
                                 <div class="formData">
                                     <label for="name">Name</label>
                                     <input type="text" name="name" id="name">
@@ -48,7 +47,6 @@
                                 <input type="password" name="passwordRep" id="passwordRep">
                                 </div>
                             </form>
-                        <!-- </div> -->
                     </div>
                     <div class="layout">
                         <img  src="Resources/half.png" alt="formDesign" width="100%" height="100%">
