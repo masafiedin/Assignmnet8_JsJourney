@@ -128,3 +128,9 @@ function pigLatin() {
   let pigLatinOutput = words.join(" ");
   document.getElementById("pigLatinOutput").innerHTML = String(pigLatinOutput);
 }
+
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
