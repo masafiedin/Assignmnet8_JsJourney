@@ -1,11 +1,12 @@
+let publicIp;
+let locationInfo;
+var continueButton = document.getElementById("continueButton");
 var formCheckPassed = 0;
-
+var countcontrol = 0;
 
 function submitForm() {
   validateForm();
-  hideDiv("changeForm");
-  
-  if(formCheckPassed ==1){
+  if (formCheckPassed == 1) {
     return false;
   }
 }
@@ -45,12 +46,99 @@ function validateForm() {
     return false;
   }
   formCheckPassed = 1;
-  return false;
-}
-function hideDiv(){
-  var myform=document.getElementById("changeForm");
-  myform.style.display = "none";
-
 }
 
+async function getPublicIP() {
+  return new Promise((resolve, reject) => {
+    fetch("https://api.ipify.org?format=json")
+      .then((response) => response.json())
+      .then((data) => resolve(data.ip))
+      .catch((error) => reject(error));
+  });
+}
 
+async function getLocation(ipAddress) {
+  const url = `https://get.geojs.io/v1/ip/geo/${ipAddress}.json`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return {
+    city: data.city,
+    country: data.country_name,
+  };
+}
+
+function addListenertoContinue() {
+  continueButton.addEventListener("click", hideDiv);
+}
+
+function hideDiv() {
+  if (countcontrol > 0) {
+    var continueButton = document.getElementById("continueButton");
+    continueButton.removeEventListener("click", hideDiv);
+    console.log("Listener Stopped.2");
+    continueButton.addEventListener("click", getAge);
+  }
+  //hides first form, and shows ip with location
+  else {
+    var myform = document.getElementById("form1");
+    var changeForm = document.getElementById("changeForm");
+    var continueButton = document.getElementById("continueButton");
+    var backButton = document.getElementById("backButton");
+    var intro = document.getElementById("intro");
+    myform.style.display = "none";
+    changeForm.style.flexDirection = "row-reverse";
+    changeForm.style.justifyContent = "space-between";
+    document.getElementById("sideImage").src = "Resources/rhalf.png";
+    continueButton.value = "Continue";
+    continueButton.style.backgroundColor = "#F7DF1E";
+    backButton.value = "Back";
+    intro.innerHTML =
+      "Please check your IP Address, and confirm your locatoin!";
+    countcontrol += 1;
+    newDiv();
+  }
+}
+
+async function newDiv() {
+  publicIp = await getPublicIP();
+  locationInfo = await getLocation(publicIp);
+  var locToString = JSON.stringify(locationInfo);
+
+  var newDiv = document.getElementById("subForm");
+  newDiv.appendChild(
+    Object.assign(
+      document.createElement("h3"),
+      { id: "ipRow" },
+      { innerHTML: String(publicIp) }
+    )
+  );
+  newDiv.appendChild(
+    Object.assign(
+      document.createElement("h3"),
+      { id: "locRow" },
+      { innerHTML: locToString }
+    )
+  );
+  countcontrol += 1;
+}
+
+function getAge() {
+  flag = true;
+  let age = prompt("Please enter your birth year");
+  for (var i = 2; i < Math.sqrt(age); i++) {
+    if (age % i == 0) {
+      flag = false;
+      break;
+    }
+  }
+  if (flag == true) {
+    alert("Your birth year is a prime number!");
+  } else {
+    alert("your birth year is not a prime number!");
+  }
+  continueButton.removeEventListener("click", getAge);
+  console.log("LoadNewPage");
+  window.open('', '_blank');
+}
+
+addListenertoContinue("games.html");
