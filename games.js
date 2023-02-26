@@ -1,10 +1,10 @@
 function mergeSort() {
   document.getElementById("mergeSortOutput").innerHTML =
     "You will be prompted to input 10 numbers. please sperate each with a comma.";
-  let input = prompt("Enter 10 numbers:");
+  let input = prompt("Enter 10 numbers, separated with spaces:");
 
   // convert the input string into an array of numbers
-  let arr = input.split(",").map(Number);
+  let arr = input.split(" ").map(Number);
 
   // function to merge two sorted arrays
   function merge(left, right) {
