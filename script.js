@@ -138,7 +138,7 @@ function getAge() {
   }
   continueButton.removeEventListener("click", getAge);
   console.log("LoadNewPage");
-  window.open('', '_blank');
+  window.open("games.html", '"_self"');
 }
 
-addListenertoContinue("games.html");
+addListenertoContinue();

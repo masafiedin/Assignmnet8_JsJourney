@@ -1,0 +1,95 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border-radius: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+#mainContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    background-color: black;
+    border-bottom: solid 5px #F7DF1E;
+    border-radius: 0px;
+}
+
+.logoText {
+    display: flex;
+    flex-direction: row nowrap;
+    margin: 2%;
+}
+
+.logoText img {
+    margin-right: 10px;
+}
+
+.headerTitle {
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.midSection{
+    margin-top: 5%;
+    width: 90%;
+    background-color: black;
+}
+.leftSide{
+
+
+
+}
+.rightSide{
+
+}
+
+.games{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin: 20px;
+    border: solid green;
+    padding:5%;
+    background-color:#FCFDFD;
+    
+
+}
+.inGame{
+    width: 48%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.inGame button{
+    background-color: #F7DF1E;
+    color: #FCFDFD;
+    font-weight: bolder;
+    font-size: x-large;
+    margin:3%;
+
+}
+
+.output{
+    width: 48%;
+    margin: 10px;
+    padding: 5%;
+    border: solid;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
